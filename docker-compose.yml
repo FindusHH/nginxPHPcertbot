@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    container_name: php
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - php
+    container_name: nginx
