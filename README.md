@@ -10,7 +10,14 @@ This repository contains a simple Docker Compose setup with three containers:
 ## Usage
 
 
-1. Generate an initial certificate (replace `eniware.info` with your domain):
+The configuration files contain the example domain `eniware.info`. To
+change it to your own domain run:
+
+```bash
+./set-domain.sh yourdomain.example
+```
+
+1. Generate an initial certificate for your domain:
 
 
 ```bash
