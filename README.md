@@ -1,9 +1,9 @@
 # nginx PHP Test Setup
 
 
-This repository contains a simple Docker Compose setup with three containers:
+1. Generate an initial certificate (replace `eniware.info` with your domain):
 
-- **nginx** – serves the PHP page over HTTPS
+  -d eniware.info --register-unsafely-without-email --agree-tos
 - **php** – runs the PHP-FPM interpreter
 - **certbot** – obtains and renews Let's Encrypt certificates
 
