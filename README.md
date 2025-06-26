@@ -1,14 +1,8 @@
 # nginx PHP Test Setup
 
 
-The configuration files contain the example domain `eniware.info`. To
-change it to your own domain run:
+This repository contains a simple Docker Compose setup with three containers:
 
-```bash
-./set-domain.sh yourdomain.example
-```
-
-1. Generate an initial certificate for your domain:
 
 - **nginx** – serves the PHP page over HTTPS
 - **php** – runs the PHP-FPM interpreter
@@ -17,14 +11,18 @@ change it to your own domain run:
 ## Usage
 
 
-The configuration files contain the example domain `eniware.info`. To
-change it to your own domain run:
+The configuration files contain the example domain `eniware.info`. Run the
+following command **before obtaining certificates** to replace it with your
+own domain:
+
 
 ```bash
 ./set-domain.sh yourdomain.example
 ```
 
-1. Generate an initial certificate for your domain:
+
+1. Generate an initial certificate for your domain (this is required before the
+   containers can start successfully):
 
 
 ```bash
@@ -33,6 +31,10 @@ docker-compose run --rm certbot certonly \
   -d eniware.info --register-unsafely-without-email --agree-tos
 
 ```
+
+If the certificate does not exist when nginx starts, the container will exit
+and your browser may display a **502** error. Make sure the above command
+completes successfully.
 
 2. Build and start the containers using Docker Compose:
 
