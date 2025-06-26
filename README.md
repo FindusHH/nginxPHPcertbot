@@ -1,7 +1,14 @@
 # nginx PHP Test Setup
 
 
-This repository contains a simple Docker Compose setup with three containers:
+The configuration files contain the example domain `eniware.info`. To
+change it to your own domain run:
+
+```bash
+./set-domain.sh yourdomain.example
+```
+
+1. Generate an initial certificate for your domain:
 
 - **nginx** – serves the PHP page over HTTPS
 - **php** – runs the PHP-FPM interpreter
